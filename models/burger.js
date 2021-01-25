@@ -1,9 +1,9 @@
 const orm = require("../config/orm.js");
 
 const burger = {
-    all: 
-insertOne:
-updateOne:
+    all: selectAll()
+create: insertOne()
+update: updateOne()
 };
 
 
