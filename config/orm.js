@@ -15,6 +15,6 @@ const orm = {
 
 }
 
-
+module.exports = orm;
 
 // updateOne()
