@@ -7,14 +7,14 @@ const burger = {
        });
    },
 
- create: (table, newRowData, callback) => {
-     orm.insertBurger("burgers", table, newRowData, function(res) {
+ create: (newBurger, callback) => {
+     orm.insertOne("burgers", newBurger, function(res) {
          callback(res);
      })
  },
  
- update: (table, updateValues, condition, callback) => {
-     orm.updateBurger("burgers", table, updateValues, condition, function(res) {
+ update: (burgerData, criteria, callback) => {
+     orm.updateOne("burgers", burgerData, criteria, function(res) {
         callback(res);
      });
  }

@@ -1,22 +1,15 @@
 $(() => {
     $(".devoured").on("click", function() {
         const id = $(this).data("id");
-        if ($(this).data("devoured") === 0) {
-            let devoured = true
-        } else{
-            devoured = false
-        }
-        console.log(devoured);
-        console.log(id);
-        const newDevoured = {
-            devoured: devoured
-        };
+        const newDevour = $(this).data("newdevoured");
+        const newDevoured = { value: newDevour};
 
         $.ajax(`/api/burgers/${id}/devoured`, {
             type: "PUT",
-            data: newDevoured
+            data: JSON.stringify(newDevoured),
+            contentType: "application/json; charset=UTF-8",
         }).then(() => {
-        console.log("changed devoured status to ", devoured);
+      
          location.reload();
 
         });
@@ -29,7 +22,7 @@ $(() => {
 
     const newBurger = {
       burger_name: $("#nom").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim(),
+     
     };
 
     // Send the POST request.

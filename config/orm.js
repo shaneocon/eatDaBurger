@@ -10,23 +10,23 @@ const orm = {
                 callback(result);
             });
     },
-    insertBurger: (table, newRowData, callback) => {
-        const insertOne = "INSERT INTO ?? SET ?";
+    insertOne: (table, newRowData, callback) => {
+        const queryString = "INSERT INTO ?? SET ?";
         const values = [table, newRowData];
 
-        connection.query(insertOne, values, (error, result) => {
+        connection.query(queryString, values, (error, result) => {
             if (error) {
                 console.log(error);
             }
             callback(result);
         });
     },
-    updateBurger: (table, updateValues, condition, callback) => {
-        const updateOne = "UPDATE ?? SET ? WHERE ? LIMIT 1";
+    updateOne: (table, updateValues, condition, callback) => {
+        const queryString = "UPDATE ?? SET ? WHERE ? LIMIT 1";
         const values = [table, updateValues, condition];
 
         console.log(updateOne);
-        connection.query(updateOne, values, (error, result) => {
+        connection.query(queryString, values, (error, result) => {
             if (error) {
                 console.log(error);
             }
