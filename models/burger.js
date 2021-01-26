@@ -6,9 +6,19 @@ const burger = {
            callback(res);
        });
    },
-   
-// create: insertOne()
-// update: updateOne()
+
+ create: (table, newRowData, callback) => {
+     orm.insertBurger("burgers", table, newRowData, function(res) {
+         callback(res);
+     })
+ },
+ 
+ update: (table, updateValues, condition, callback) => {
+     orm.updateBurger("burgers", table, updateValues, condition, function(res) {
+        callback(res);
+     });
+ }
+
 };
 
 

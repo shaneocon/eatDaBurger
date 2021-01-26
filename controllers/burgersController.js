@@ -12,6 +12,14 @@ router.get("/", (req, res) => {
         console.log(handlebarsObj);
         res.render("index", handlebarsObj);
     });
-})
+});
+
+router.post("/api/burgers", (req, res) => {
+    burger.create({ burger_name: req.body.burger_name, devoured: req.body.devoured }, (result) => {
+        res.json({ id: result.insertId });
+    });
+});
+
+
 
 module.exports = router;
