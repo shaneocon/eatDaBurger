@@ -10,8 +10,29 @@ const orm = {
                 callback(result);
             });
     },
+    insertBurger: (table, newRowData, callback) => {
+        const insertOne = "INSERT INTO ?? SET ?";
+        const values = [table, newRowData];
 
-    // insertOne: ()
+        connection.query(insertOne, values, (error, result) => {
+            if (error) {
+                console.log(error);
+            }
+            callback(result);
+        });
+    },
+    updateBurger: (table, updateValues, condition, callback) => {
+        const updateOne = "UPDATE ?? SET ? WHERE ? LIMIT 1";
+        const values = [table, updateValues, condition];
+
+        console.log(updateOne);
+        connection.query(updateOne, values, (error, result) => {
+            if (error) {
+                console.log(error);
+            }
+            callback(result);
+        });
+    }
 
 }
 
