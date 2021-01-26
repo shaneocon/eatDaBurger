@@ -25,13 +25,14 @@ const orm = {
         const queryString = "UPDATE ?? SET ? WHERE ? LIMIT 1";
         const values = [table, updateValues, condition];
 
-        console.log(updateOne);
-        connection.query(queryString, values, (error, result) => {
+        console.log(queryString);
+        const query = connection.query(queryString, values, (error, result) => {
             if (error) {
                 console.log(error);
             }
             callback(result);
         });
+        console.log(query.sql);
     }
 
 }

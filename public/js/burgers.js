@@ -1,8 +1,8 @@
 $(() => {
     $(".devoured").on("click", function() {
         const id = $(this).data("id");
-        const newDevour = $(this).data("newdevoured");
-        const newDevoured = { value: newDevour};
+        const newDevour = true;
+        const newDevoured = { devoured: newDevour};
 
         $.ajax(`/api/burgers/${id}/devoured`, {
             type: "PUT",

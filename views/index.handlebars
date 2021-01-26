@@ -8,12 +8,12 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class= "center col-lg-6 col-sm-12 ">
+		<div class= "col-lg-6 col-sm-12 ">
 			<ul>
 				{{#each burgers}}
 					{{#unless devoured}}
 						
-							{{> burger/burger-block devoured=true}}
+							{{> burger/burger-block devoured=false}}
 						
 					{{/unless}}
 				{{/each}}
@@ -22,11 +22,11 @@
 	</div>
 	
 	<h2>These burgers were so filling!</h2>
-		<div class= "center col-lg-6 col-sm-12 ">
+		<div class= "col-lg-6 col-sm-12 ">
 			<ul>
 				{{#each burgers}}
 					{{#if devoured}}
-						{{> burger/burger-block devored=false}}
+						{{> burger/burger-block devoured=true}}
 					{{/if}}
 				{{/each}}
 			</ul>
