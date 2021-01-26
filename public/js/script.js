@@ -1,16 +1,22 @@
 $(() => {
-    $(".change-sleep").on("click", function() {
+    $(".devoured").on("click", function() {
         const id = $(this).data("id");
-        const newSleep = $(this).data(newsleep)
-
-        const newSleepstate = { value: newSleep };
+        if ($(this).data("devoured") === 0) {
+            let devoured = true
+        } else{
+            devoured = false
+        }
+        console.log(devoured);
+        console.log(id);
+        const newDevoured = {
+            devoured: devoured
+        };
 
         $.ajax(`/api/burgers/${id}/devoured`, {
             type: "PUT",
-            data: JSON.stringify(newSleepstate),
-            contentType: "application/json; charset=UTF-8",
+            data: newDevoured
         }).then(() => {
-           
+        console.log("changed devoured status to ", devoured);
          location.reload();
 
         });
@@ -21,18 +27,19 @@ $(() => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    const newCat = {
-      name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim(),
+    const newBurger = {
+      burger_name: $("#nom").val().trim(),
+      devoured: $("[name=devoured]:checked").val().trim(),
     };
 
     // Send the POST request.
-    $.ajax("/api/cats", {
+    $.ajax("/api/burgers", {
       type: "POST",
-      data: newCat,
+      data: newBurger,
     }).then(() => {
+        console.log("new burger added to the menu")
       // Reload the page to get the updated list
-      location.reload();
+        location.reload();
     });
   });
 })
