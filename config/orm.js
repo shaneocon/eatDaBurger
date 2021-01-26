@@ -11,8 +11,10 @@ const orm = {
             });
     },
 
+    // insertOne: ()
+
 }
 
 
-insertOne()
-updateOne()
+
+// updateOne()
