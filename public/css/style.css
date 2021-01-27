@@ -7,6 +7,52 @@ li {
 .label {
   font-weight: bold;
 }
+body { 
+  background-image: url(https://lh3.googleusercontent.com/proxy/i3gMvFPjI-pw5et6cHc5n_1loT9_dw_1ulWqVTCqJW8k54xR8d9rE1zrrvdDR1ZXUxj1O06YlndWXqmNIsku2lYVK39TQQepQk-yt-TTgfS9hsW4tVAQDAlwDDeFHx7isAVFSXdz5bbuVg) ;
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #000000;  
+}
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+img {
+  align-content: center;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.burgerImg {
+  width: 300px;
+}
+
+
+
+
+
+
+/* body {
+  background-image: url('/public/img/burger.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+ li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
+
+.label {
+  font-weight: bold;
+}
 
 .create-update-form {
   padding: 5px;
@@ -20,4 +66,4 @@ li {
 
 .burgerImg {
   width: 300px;
-}
+}  */
