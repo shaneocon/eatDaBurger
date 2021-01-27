@@ -20,9 +20,13 @@ body {
   margin: 5px;
   background: aqua;
 }
-img {
-  align-content: center;
+
+.header {
+  background-color: rgb(44, 160, 175);
 }
+/* img {
+  align-content: center;
+} */
 
 .form-group {
   margin-bottom: 5px;
@@ -30,6 +34,7 @@ img {
 
 .burgerImg {
   width: 300px;
+  align-content: center
 }
 
 
